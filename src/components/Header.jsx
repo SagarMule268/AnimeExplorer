@@ -4,11 +4,13 @@ const Header = () => {
   const {theme ,toggleTheme} = React.useContext(ThemeContext);
   
   return (
-    <nav className={ theme=='dark'?'navbar-dark': 'navbar'}>
+    <div className='header'>
+      <nav className={ theme=='dark'?'navbar-dark': 'navbar'}>
       <div className={theme=='dark'?'log-dark':'log'}></div>
-      <h1 className=''>Anime Explorer </h1>
-      <button onClick={toggleTheme}> {theme=='dark'? 'Light Mode':'Dark Mode'} </button>
+      <h1 className='text-'>Anime Explorer </h1>
+      <button onClick={toggleTheme}> <i class="fa fa-lightbulb"></i> </button>
     </nav>
+    </div>
   )
 }
 

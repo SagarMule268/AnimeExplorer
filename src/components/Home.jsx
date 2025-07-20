@@ -17,9 +17,8 @@ const Home = () => {
     setLoading(false);
    }
   return (
-    <div >
+    <div className='container' >
       <Header/>
-      <Sample />
         <SearchBar onSearch={handleSearch} />
         {loading && <div className=' text-center loader'></div>
 }

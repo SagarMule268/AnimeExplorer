@@ -17,8 +17,8 @@ const SearchBar = ({onSearch}) => {
     }
   return (
 
-    <div className={theme=="dark"?'anime-search-bar-dark':'anime-search-bar-light'}>
-        <form onSubmit={handleSubmit} >
+    <div className={theme=="dark"?'anime-search-bar  anime-search-bar-dark':' anime-search-bar anime-search-bar-light '}>
+        <form onSubmit={handleSubmit} className=''>
          <input  type="text"
          placeholder='Search for a anime ....'
           value={query} 
