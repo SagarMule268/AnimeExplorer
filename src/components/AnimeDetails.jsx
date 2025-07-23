@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import Header from './Header';
 import { ThemeContext } from './ThemeContext';
+import Trailer from './Trailer';
 const AnimeDetails = () => {
   const { id } = useParams();
   const {theme}=useContext(ThemeContext);
@@ -23,6 +24,7 @@ const AnimeDetails = () => {
   const showTrailer = () => {
     setTrailer(true);
   }
+  const closeTrailer=()=>{setTrailer(false)}
   if (loading) {
     return <div className='loader'></div>;
   }
@@ -45,8 +47,10 @@ const AnimeDetails = () => {
     <>
      <div className='m-30'>
        <Header />
+       
       <div className="flex flex-col md:flex-row p-4 ">
   {/* Image Section */}
+  
   <img
     src={anime.images.jpg.image_url}
     alt={anime.title}
@@ -56,6 +60,12 @@ const AnimeDetails = () => {
   
   {/* Text Information */}
   <div className="md:ml-8 mt-4 md:mt-0 d-flex flex-1 justify-center items-center pt-40">
+    <button
+  onClick={() => navigate(-1)}
+  className={`absolute top-34  right-32 px-4 py-2 rounded-lg ${theme === 'dark' ? 'bg-black text-white border-2 border-white' : 'bg-white text-black border-2 border-black !important'}`}
+>
+  ⬅ Back
+</button>
     <h1 className="text-3xl font-bold mb-2">{anime.title}</h1>
     <p>No of episodes: {anime.episodes}</p>
     <p>Duration: {anime.duration}</p>
@@ -76,19 +86,11 @@ const AnimeDetails = () => {
   <p className="text-justify mt-2">{anime.synopsis}</p>
 </div>
 
-{/* Trailer Section */}
-<div className="col-span-4 m-4">
-  {trailer && (
-    <iframe
-      src={anime.trailer.embed_url}
-      frameBorder="0"
-      className="w-full h-[60vh] md:h-[80vh] mt-4"
-      allowFullScreen
-    ></iframe>
-  )}
-</div>
+
+
 
      </div>
+     <Trailer trailer={trailer} anime={anime} closeTrailer={closeTrailer} theme={theme}/>
     </>
 
 
