@@ -6,6 +6,7 @@ import AnimeCard from './AnimeCard';
 import ZoroPlayer from './ZoroPlayer';
 import Header from './Header';
 import {useLocation, useNavigate } from 'react-router-dom';
+import Footer from './Footer';
 
 const Home = () => {
   const [animeData, setAnimeData] = useState([]);
@@ -28,19 +29,17 @@ const Home = () => {
     setLoading(false);
   }
   return (
-    <div className='container' >
-      <Header />
+    <div className='' >
       <SearchBar onSearch={handleSearch} />
       {loading && <div className=' text-center loader'></div>}
       
-      <div className='grid grid-cols-2 sm:grid-cols-4 '>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4  justify-items-center p-4 m-4'>
         {animeData.map(anime => (
 
           <AnimeCard key={anime.mal_id} anime={anime} />
 
         ))}
       </div>
-
     </div>
 
   )

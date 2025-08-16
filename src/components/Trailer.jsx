@@ -1,28 +1,31 @@
 import React from 'react'
 
-const Trailer = ({ trailer, anime, theme , closeTrailer}) => {
+const Trailer = ({  anime, closeTrailer}) => {
 
     return (
         <div className='trailer container m-15   '>
             {
 
-                trailer && (
-                    <div >
-                        <button
-                            onClick={closeTrailer}
-                          className={`px-4 py-2 rounded-lg ${theme === 'dark' ? 'bg-black text-white border-2 border-white' : 'bg-white text-black border-2 border-black !important'}`}
+                
+                    <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+  <div className="relative w-full max-w-4xl p-4">
+    <button
+      onClick={closeTrailer}
+      className="absolute top-2 right-2 bg-white text-black px-3 py-1 rounded-full shadow-lg hover:bg-gray-200"
+    >
+      ✕
+    </button>
+    <iframe
+      src={anime.trailer.embed_url}
+      frameBorder="0"
+      className="w-full h-[60vh] md:h-[80vh] rounded-lg shadow-lg"
+      allowFullScreen
+    ></iframe>
+  </div>
+</div>
 
-                        ><i className='fa fa-times'></i></button>
-                        <iframe
-                            src={anime.trailer.embed_url}
-                            frameBorder="0"
-                            className="w-full h-[60vh] md:h-[80vh] mt-4"
-                            allowFullScreen
-                            autoPlay
-                        ></iframe>
-                    </div>
 
-                )}
+                }
         </div>
 
     )

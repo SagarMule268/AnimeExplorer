@@ -17,15 +17,17 @@ const SearchBar = ({onSearch}) => {
     }
   return (
 
-    <div className={theme=="dark"?'anime-search-bar  anime-search-bar-dark':' anime-search-bar anime-search-bar-light '}>
-        <form onSubmit={handleSubmit} className=''>
+    <div className=" flex justify-center items-center p-4 m-4">
+        <form onSubmit={handleSubmit} className='flex space-x-4'>
          <input  type="text"
          placeholder='Search for a anime ....'
           value={query} 
           onChange={(e)=>setQuery(e.target.value)} 
           name="title"
-           id="" />
-            <button type="submit">Search</button>
+           id=""
+           className='border border-gray-500 rounded-lg px-4 py-2  focus:outline-none focus:ring-2 focus:ring-black-500'
+           />
+            <button type="submit" className='bg-gray-900 text-white px-6 py-2 rounded-lg hover:bg-white-700 focus:outline-none focus:ring-2 focus:ring-white-400'>Search</button>
         </form>
     </div>
   )

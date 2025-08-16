@@ -7,7 +7,7 @@ export default defineConfig({
   base: '/anime-expo',
   plugins: [
     react(),
-    tailwindcss(),
+    tailwindcss(), 
 
   ],
 })
