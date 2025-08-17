@@ -30,7 +30,7 @@ const Footer = () => {
 
   {/* Bottom text */}
   <div className="text-center text-gray-500 text-sm mt-6 border-t border-gray-700 pt-4">
-    © 2025 Anime Explorer. All rights reserved.
+    © { new Date().getFullYear()  } Anime Explorer. All rights reserved.
   </div>
 </footer>
 
