@@ -10,6 +10,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Landing from './components/Landing';
 function App() {
   return (
     <>
@@ -20,11 +21,11 @@ function App() {
             <Routes>
 
 
-              <Route path='/' element={<Home />} />
+              <Route path='/' element={<Landing />} />
+              <Route path='/home' element={<Home />} />
               <Route path='/anime/:id' element={<AnimeDetails />} />
               <Route path='/about' element={<About />} />
               <Route path='/contact' element={<Contact />} />
-
 
 
 

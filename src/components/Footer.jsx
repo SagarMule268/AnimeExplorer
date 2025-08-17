@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-6 mt-10">
+    <footer className="bg-gray-900 text-gray-300 py-6 ">
   <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
     
     {/* Left side - Logo & description */}
@@ -22,9 +22,9 @@ const Footer = () => {
 
     {/* Right side - Social */}
     <div className="flex space-x-4 mt-4 md:mt-0">
-      <a href="#"><i className="fab fa-twitter hover:text-white"></i></a>
-      <a href="#"><i className="fab fa-instagram hover:text-white"></i></a>
-      <a href="#"><i className="fab fa-github hover:text-white"></i></a>
+      <a href="https://x.com/MuleSagar42656" target='_blank'><i className="fab fa-twitter hover:text-white"></i></a>
+      <a href="https://www.instagram.com/sagar__75175/" target='_blank' ><i className="fab fa-instagram hover:text-white"></i></a>
+      <a href="https://github.com/SagarMule268/" target='_blank' ><i className="fab fa-github hover:text-white"></i></a>
     </div>
   </div>
 
