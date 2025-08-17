@@ -24,7 +24,7 @@ const Home = () => {
     setLoading(true);
     const res = await axios.get(`https://api.jikan.moe/v4/anime?q=${query}`);
     setAnimeData(res.data.data);
-     navigate(`/?q=${query}`, { replace: true });
+     navigate(`/home?q=${query}`, { replace: true });
     console.log(res.data.data);
     setLoading(false);
   }
