@@ -1,5 +1,4 @@
 {
-  "homepage": "https://sagarmule268.github.io/anime-expo/",
   "name": "myreact",
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +8,6 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
